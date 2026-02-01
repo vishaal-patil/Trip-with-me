@@ -48,20 +48,20 @@ export const GemWidget = () => {
                 </div>
 
                 {/* Gems Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {gems.map((gem, index) => (
-                        <GlassCard key={index} className="p-0 overflow-hidden group border-white/10 hover:border-accent/40">
-                            <div className="h-40 w-full relative">
+                        <GlassCard key={index} className="p-0 overflow-hidden group border-white/10 hover:border-accent/40 flex flex-col h-full">
+                            <div className="h-48 w-full relative shrink-0">
                                 <img src={gem.image} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt={gem.title} />
                                 <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded-lg flex items-center gap-1">
                                     <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
                                     <span className="text-xs text-white font-bold">4.8</span>
                                 </div>
                             </div>
-                            <div className="p-4">
+                            <div className="p-4 flex flex-col flex-grow">
                                 <h3 className="font-bold text-white truncate">{gem.title}</h3>
                                 <p className="text-xs text-secondary mt-1">{gem.location}</p>
-                                <div className="mt-3 flex items-center justify-between">
+                                <div className="mt-auto pt-4 flex items-center justify-between">
                                     <span className="text-xs text-accent">By {gem.user}</span>
                                     <button className="text-xs text-white/60 hover:text-white">Save</button>
                                 </div>
